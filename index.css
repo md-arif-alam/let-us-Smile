@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 62.5%;
+    font-family: 'Dekko';
+    background-color: rgb(40, 40, 40);
+    color: #060606;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.container{
+    /* border: 2px solid red; */
+    max-width: 900px;
+    width: 90%;
+    height: 100vh;
+    background: url('./img/BackMain.jpg');
+    background-size: cover;
+    text-align: center;
+   
+}
+.jokeContainer{
+    /* border: 2px solid rgb(52, 226, 43); */
+    width: 100%;
+    font-size: 2rem;
+    text-shadow:
+    0 0 4px #2d2d2d,
+    0 0 10px rgb(0, 204, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, rgba(114, 114, 114, 0.228), rgba(123, 123, 123, 0.473));
+    background-size: cover;
+    
+}
+
+.gif{
+    /* border: 2px solid  blue; */
+    display: flex;
+    flex: 1fr 1fr;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+
+}
+.gif img{
+  width: 20rem;
+  height: 20rem;
+}
+.jokes{
+    text-align: center;
+}
+
+
+
+/* ############################### For Next button ############ */
+ 
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #d7d88c;
+    /* background: #111111; */
+    background: #9c49ba;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    /* color: #000 */
+    background: #9c49ba;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #111; */
+    background: #9c49ba;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/* text glow */
+
+.neonText {
+    /* color: #0fb0e1fa; */
+    /* color:#ff0000; */
+    color: #2d2d2d;
+    text-shadow:
+    0 0 4px #d9d6d6,
+    0 0 10px rgb(170, 0, 255);
+    font-size: 2rem;    
+  }
+
+
+
+@media (max-width:650px){
+    .container{
+        width: 90%;
+        height: 100vh;
+    }
+    .gif{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+    }
+    .gif img{
+        display: block;
+        width:auto;
+    }
+    .gif .joke{
+        padding-top: 3rem;
+        height: 20vh;
+        font-size: 1.2rem;
+    }
+    .neonText{
+        font-size: 1.4rem;
+    }  
+    .glow-on-hover {
+        margin-top: 2rem;
+        width: 200px;
+        height: 50px;
+    }      
+  
+}
+
+/* ################ Responsive ################### */
+
+@media (max-width:400px){
+
+    .container{
+        width: 90%;
+        height: 100vh;
+    }
+    .gif{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+    
+    }
+    .gif img{
+        display: block;
+        width:auto;
+    }
+    .gif .joke{
+        padding-top: 3rem;
+        height: 20vh;
+        font-size: 1rem;
+    }
+    .neonText{
+        font-size: 1rem;
+    }  
+    .glow-on-hover {
+        margin-top: 1rem;
+        width: 150px;
+        height: 50px;
+    }  
+}
+
+@media (max-width:295px) and (max-width:200px){
+    .container{
+        width: 90%;
+        height: 100vh;
+    }
+    .gif{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    
+    }
+    .gif img{
+        display: block;
+        width:auto;
+    }
+    .gif .joke{
+        padding-top: 1rem;
+        height: 15vh;
+        font-size: 1rem;
+    }
+    .neonText{
+        font-size: 0.8rem;
+    }  
+    .glow-on-hover {
+        margin-top: 1rem;
+        width: 100px;
+        height: 50px;
+    }    
+
+}
